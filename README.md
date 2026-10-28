@@ -1,1 +1,3 @@
 # GeoRochas
+
+Esse projeto é .....
