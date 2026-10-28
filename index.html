@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GeoRochas — Explore o mundo das rochas</title>
+    <meta name="description" content="GeoRochas: site educativo sobre rochas ígneas, sedimentares e metamórficas, com ciclo das rochas interativo.">
+    <meta name="theme-color" content="#0a0d0b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.4.0/model-viewer.min.js"></script>
+  </head>
+  <body class="pagina-inicial">
+    <a class="skip" href="#main">Pular para o conteúdo</a>
+    <header class="site">
+      <div class="container">
+        <a class="logo" href="index.html" aria-label="GeoRochas, página inicial">
+        <span>Geo<b>Rochas</b></span></a>
+        <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu
+        </button>
+        <nav id="menu" aria-label="Principal">
+          <ul>
+            <li><a href="index.html" aria-current="page">Início</a>
+            </li>
+            <li><a href="igneas.html">Ígneas</a>
+            </li>
+            <li><a href="sedimentares.html">Sedimentares</a>
+            </li>
+            <li><a href="metamorficas.html">Metamórficas</a>
+            </li>
+            <li><a href="ciclo.html">Ciclo das rochas</a>
+            </li>
+            <li><a href="jogo.html">Jogo</a>
+            </li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" type="button" aria-label="Ativar tema claro">
+  ☀️ Tema claro
+        </button>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero">
+        <div class="container">
+          <div class="intro">
+            <span class="eyebrow">Geografia · Geologia</span>
+            <h1>Descubra o que a <span>Terra</span> guarda em suas rochas
+            </h1>
+            <p class="lead">Do magma que esfria ao sedimento que se compacta, as rochas contam a história do planeta. Explore os três grandes grupos, acompanhe o ciclo das rochas e teste o que aprendeu.</p>
+            <div class="btn-row"><a class="btn" href="ciclo.html">Explorar o ciclo das rochas</a><a class="btn ghost" href="#grupos">Conhecer os grupos</a>
+            </div>
+          </div>
+          <div class="globe-stage" aria-hidden="true">
+            <model-viewer class="globe" src="assets/planeta-terra.glb" alt="Planeta Terra em 3D. Arraste com o mouse ou o dedo para girar e use a roda para aproximar." camera-controls auto-rotate rotation-per-second="14deg" shadow-intensity="0" exposure="1.1" interaction-prompt="none" touch-action="pan-y"></model-viewer>
+          </div>
+        </div>
+<a class="scroll-cue" href="#grupos">Role</a>
+      </section>
+      <section class="block" id="grupos">
+        <div class="container">
+          <div class="sec-head reveal">
+            <span class="eyebrow">Três grupos</span>
+            <h2>Toda rocha tem uma origem</h2>
+            <p>As rochas são classificadas de acordo com a forma como se originaram. Escolha um grupo para aprofundar.</p>
+          </div>
+          <div class="grid3"><a class="card reveal card-link" href="igneas.html">
+            <div class="tex tex-ign rock-image"><img src="assets/rocha-igneas.png" alt=""></div><span class="tag">Ígneas</span>
+            <h3>Nascidas do fogo</h3>
+            <p>Formadas pelo resfriamento e solidificação do magma ou da lava. Exemplos: granito e basalto.</p></a><a class="card reveal card-link" href="sedimentares.html">
+            <div class="tex tex-sed rock-image"><img src="assets/rocha-sedimentares.webp" alt=""></div><span class="tag">Sedimentares</span>
+            <h3>Camadas do tempo</h3>
+            <p>Formadas pelo acúmulo e litificação de sedimentos. Guardam fósseis. Exemplos: arenito e calcário.</p></a><a class="card reveal card-link" href="metamorficas.html">
+            <div class="tex tex-met rock-image"><img src="assets/rocha-metamorficas.png" alt=""></div><span class="tag">Metamórficas</span>
+            <h3>Rochas transformadas</h3>
+            <p>Surgem quando outra rocha é alterada por calor e pressão sem se fundir. Exemplos: mármore e gnaisse.</p></a>
+          </div>
+        </div>
+      </section>
+      <section class="block alt">
+        <div class="container">
+          <div class="sec-head reveal">
+            <span class="eyebrow">Comparativo</span>
+            <h2>Os três grupos lado a lado</h2>
+          </div>
+          <div class="table-wrap reveal">
+            <table>
+              <caption>Comparação entre os grupos de rochas
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Grupo
+                  </th>
+                  <th scope="col">Como se forma
+                  </th>
+                  <th scope="col">Aspecto típico
+                  </th>
+                  <th scope="col">Exemplos
+                  </th>
+                  <th scope="col">Usos comuns
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Ígneas (magmáticas)
+                  </th>
+                  <td>Resfriamento e solidificação de magma ou lava
+                  </td>
+                  <td>Cristais entrelaçados, grandes (intrusivas) ou muito pequenos (extrusivas); sem camadas
+                  </td>
+                  <td>Granito, gabro, basalto, riolito
+                  </td>
+                  <td>Construção, revestimentos, brita
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Sedimentares
+                  </th>
+                  <td>Deposição, compactação e cimentação de sedimentos
+                  </td>
+                  <td>Camadas (estratos); podem conter fósseis; grãos ou cristais de precipitação
+                  </td>
+                  <td>Arenito, conglomerado, folhelho, calcário, carvão
+                  </td>
+                  <td>Construção, cimento, combustíveis, reservatórios de água e petróleo
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Metamórficas
+                  </th>
+                  <td>Transformação de rocha preexistente por calor, pressão e fluidos, no estado sólido
+                  </td>
+                  <td>Minerais orientados em bandas ou folhas (foliação) ou aspecto granular recristalizado
+                  </td>
+                  <td>Gnaisse, xisto, ardósia, mármore, quartzito
+                  </td>
+                  <td>Pisos, telhados, revestimentos, esculturas
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section class="block">
+        <div class="container">
+          <div class="sec-head reveal">
+            <span class="eyebrow">Em movimento</span>
+            <h2>Nenhuma rocha é para sempre</h2>
+            <p>Ao longo de milhões de anos, uma rocha pode se transformar em outra. Esse processo contínuo é o <strong>ciclo das rochas</strong> — e aqui você pode explorá-lo em um diagrama interativo.
+            </p>
+          </div>
+          <div class="btn-row"><a class="btn" href="ciclo.html">Abrir o diagrama</a><a class="btn ghost" href="jogo.html">Ir para o jogo</a>
+          </div>
+        </div>
+      </section>
+      <section class="block alt">
+        <div class="container">
+          <div class="sec-head reveal">
+            <span class="eyebrow">Vídeo</span>
+            <h2>Vídeo explicativo</h2>
+          </div>
+          <div class="placeholder reveal">
+            <div>
+              <span class="tag">Em breve</span>
+              <strong>Espaço reservado para o vídeo</strong>
+              <p>Este espaço pode receber um vídeo quando ele estiver pronto.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="block" id="cadastro">
+        <div class="container">
+          <div class="cadastro reveal">
+            <div>
+              <h2>Quer continuar explorando?</h2>
+              <p>Cadastre seu e-mail e receba curiosidades sobre rochas, minerais e a história do planeta.</p>
+              <div class="cadastro-rochas" aria-hidden="true">
+                <img src="assets/rocha-igneas.png" alt="">
+                <img src="assets/rocha-sedimentares.webp" alt="">
+                <img src="assets/rocha-metamorficas.png" alt="">
+              </div>
+            </div>
+            <div>
+              <form class="cadastro-form" id="cadastro-form">
+                <label class="campo">Nome
+                  <input type="text" name="nome" autocomplete="given-name" placeholder="Como podemos te chamar?" required>
+                </label>
+                <label class="campo">E-mail
+                  <input type="email" name="email" autocomplete="email" placeholder="voce@exemplo.com" required>
+                </label>
+                <button class="btn" type="submit">Quero receber</button>
+                <p class="cadastro-nota">Você pode cancelar quando quiser.</p>
+              </form>
+              <div class="cadastro-ok" role="status">
+                <strong>Cadastro feito, <span id="cadastro-nome"></span>!</strong>
+                <p>Fique de olho na sua caixa de entrada: as novidades chegam em breve.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container"><span>© 2026 GeoRochas — projeto escolar de Geografia</span><span><a href="index.html">Início</a> · <a href="ciclo.html">Ciclo das rochas</a> · <a href="jogo.html">Jogo</a></span>
+      </div>
+    </footer>
+    <a href="#" class="to-top" aria-label="Voltar ao topo">↑</a>
+    <script src="script.js" defer></script>
+  </body>
+</html>
+
+

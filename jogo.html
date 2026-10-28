@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jogo — GeoRochas</title>
+    <meta name="description" content="Jogo educativo do GeoRochas (espaço reservado para integração).">
+    <meta name="theme-color" content="#0a0d0b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="pagina-jogo">
+    <a class="skip" href="#main">Pular para o conteúdo</a>
+    <header class="site">
+      <div class="container">
+        <a class="logo" href="index.html" aria-label="GeoRochas, página inicial">
+        <span>Geo<b>Rochas</b></span></a>
+        <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu
+        </button>
+        <nav id="menu" aria-label="Principal">
+          <ul>
+            <li><a href="index.html">Início</a>
+            </li>
+            <li><a href="igneas.html">Ígneas</a>
+            </li>
+            <li><a href="sedimentares.html">Sedimentares</a>
+            </li>
+            <li><a href="metamorficas.html">Metamórficas</a>
+            </li>
+            <li><a href="ciclo.html">Ciclo das rochas</a>
+            </li>
+            <li><a href="jogo.html" aria-current="page">Jogo</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="page-hero">
+        <div class="container">
+          <div class="intro">
+            <p class="crumbs"><a href="index.html">Início</a> / Jogo
+            </p>
+            <h1>Jogo</h1>
+            <p class="lead">Teste o que você aprendeu sobre os grupos de rochas e o ciclo das rochas.</p>
+          </div>
+          <figure class="game-cover"><img src="assets/jogo-capa.svg" alt="Cena do jogo Orange Cosmos: uma nave laranja atira em rochas no espaço"></figure>
+        </div>
+      </section>
+      <section class="block">
+        <div class="container">
+          <div class="sec-head reveal">
+            <span class="eyebrow">Desafio</span>
+            <h2>Área do jogo</h2>
+          </div>
+          <div class="game-container reveal">
+            <iframe src="jogo/index.html" title="Jogo Orange Cosmos" loading="lazy"></iframe>
+          </div>
+        </div>
+      </section>
+      <section class="block">
+        <div class="container">
+          <div class="pager"><a class="btn ghost" href="ciclo.html">← Ciclo das rochas</a><a class="btn" href="index.html">Voltar ao início →</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container"><span>© 2026 GeoRochas — projeto escolar de Geografia</span><span><a href="index.html">Início</a> · <a href="ciclo.html">Ciclo das rochas</a> · <a href="jogo.html">Jogo</a></span>
+      </div>
+    </footer>
+    <a href="#" class="to-top" aria-label="Voltar ao topo">↑</a>
+    <script src="script.js" defer></script>
+  </body>
+</html>
+
+
+
+

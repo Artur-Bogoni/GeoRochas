@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ciclo das rochas — GeoRochas</title>
+    <meta name="description" content="Diagrama interativo do ciclo das rochas: magma, rochas ígneas, sedimentares e metamórficas e os processos entre elas.">
+    <meta name="theme-color" content="#0a0d0b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="pagina-ciclo">
+    <a class="skip" href="#main">Pular para o conteúdo</a>
+    <header class="site">
+      <div class="container">
+        <a class="logo" href="index.html" aria-label="GeoRochas, página inicial">
+        <span>Geo<b>Rochas</b></span></a>
+        <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu
+        </button>
+        <nav id="menu" aria-label="Principal">
+          <ul>
+            <li><a href="index.html">Início</a>
+            </li>
+            <li><a href="igneas.html">Ígneas</a>
+            </li>
+            <li><a href="sedimentares.html">Sedimentares</a>
+            </li>
+            <li><a href="metamorficas.html">Metamórficas</a>
+            </li>
+            <li><a href="ciclo.html" aria-current="page">Ciclo das rochas</a>
+            </li>
+            <li><a href="jogo.html">Jogo</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="page-hero">
+        <div class="container">
+          <div class="intro">
+            <p class="crumbs"><a href="index.html">Início</a> / Ciclo das rochas
+            </p>
+            <h1>Ciclo das rochas</h1>
+            <p class="lead">Ao longo de milhões de anos, qualquer rocha pode se transformar em outra. Clique nos elementos do diagrama para entender cada etapa.</p>
+          </div>
+          <figure class="rock-photo rock-photo-sedimentar"><img src="assets/rocha-sedimentares.webp" alt="Amostra de rocha sedimentar"></figure>
+        </div>
+      </section>
+      <section class="block">
+        <div class="container">
+          <div class="sec-head reveal">
+            <span class="eyebrow">Explore</span>
+            <h2>Diagrama interativo</h2>
+            <p>Cada seta é um processo que transforma um material em outro. Selecione uma rocha ou uma seta, ou acompanhe o ciclo completo pelo botão.</p>
+          </div>
+          <div class="cycle reveal">
+            <div class="diagram">
+              <!-- O desenho é gerado pelo ciclo.js a partir dos dados do diagrama. -->
+              <svg id="ciclo-svg" viewBox="0 0 900 660" role="group" aria-label="Diagrama interativo do ciclo das rochas"></svg>
+              <div class="diagram-legend">
+                <span class="legenda interno">Calor interno e pressão</span>
+                <span class="legenda superficie">Clima, água, vento e gravidade</span>
+                <label class="legenda-atalhos"><input type="checkbox" id="atalhos"> Mostrar atalhos</label>
+              </div>
+            </div>
+            <div class="side">
+              <div class="panel" id="painel" aria-live="polite"></div>
+              <div class="space-top">
+                <button class="btn" id="play" type="button" aria-pressed="false">▶ Percorrer o ciclo</button>
+              </div>
+            </div>
+          </div>
+          <p class="chips-label">Também por botões</p>
+          <div class="chips" id="chips"></div>
+        </div>
+      </section>
+      <section class="block alt">
+        <div class="container">
+          <div class="sec-head reveal">
+            <span class="eyebrow">Para entender</span>
+            <h2>O ciclo não é uma linha reta</h2>
+          </div>
+          <div class="grid2">
+            <div class="reveal">
+              <p>Não existe uma ordem obrigatória: uma rocha ígnea pode virar metamórfica sem passar por sedimentos, e uma sedimentar pode ser soterrada e fundir diretamente. Os "atalhos" são tão importantes quanto o percurso completo — ative "Mostrar atalhos" no diagrama para vê-los.</p>
+            </div>
+            <div class="callout reveal"><strong>Motores do ciclo:</strong> o calor interno da Terra move o magma e o metamorfismo (processos internos); a energia do Sol, a água e o vento movem o intemperismo e a erosão (processos externos).
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="block">
+        <div class="container">
+          <div class="pager"><a class="btn ghost" href="metamorficas.html">← Metamórficas</a><a class="btn" href="jogo.html">Jogo →</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container"><span>© 2026 GeoRochas — projeto escolar de Geografia</span><span><a href="index.html">Início</a> · <a href="ciclo.html">Ciclo das rochas</a> · <a href="jogo.html">Jogo</a></span>
+      </div>
+    </footer>
+    <a href="#" class="to-top" aria-label="Voltar ao topo">↑</a>
+    <script src="script.js" defer></script>
+    <script src="ciclo.js" defer></script>
+  </body>
+</html>
+
+

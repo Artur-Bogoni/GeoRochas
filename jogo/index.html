@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b10">
+  <title>ORANGE COSMOS — Destrua. Sobreviva. Descubra.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="app">
+
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Orange Cosmos">
+        ORANGE <span>COSMOS</span>
+      </a>
+
+      <div class="hud">
+        <div>
+          <small>PONTUAÇÃO</small>
+          <strong id="score">000000</strong>
+        </div>
+
+        <div>
+          <small>RECORDE</small>
+          <strong id="highScore">000000</strong>
+        </div>
+
+        <div>
+          <small>ONDAS</small>
+          <strong id="wave">01</strong>
+        </div>
+
+        <div>
+          <small>VIDAS</small>
+          <strong id="lives">♥ ♥ ♥</strong>
+        </div>
+      </div>
+
+      <button
+        class="icon-button"
+        id="soundToggle"
+        title="Ativar/desativar som"
+        aria-label="Ativar ou desativar som"
+      >♫</button>
+    </header>
+
+
+    <!-- ÁREA PRINCIPAL DO JOGO -->
+    <section class="game-shell">
+
+      <canvas id="gameCanvas" aria-label="Arena do jogo Orange Cosmos"></canvas>
+
+      <div class="canvas-vignette"></div>
+
+
+      <!-- MENU INICIAL -->
+      <section class="overlay active" id="menuScreen">
+        <div class="menu-card">
+
+          <div class="eyebrow">
+            <span class="pulse-dot"></span>
+            SIMULAÇÃO GALÁCTICA • GEOLOGIA ARCADE
+          </div>
+
+          <h1>ORANGE<br><span>COSMOS</span></h1>
+
+          <p class="tagline">
+            Destrua. Sobreviva. Descubra o universo.
+          </p>
+
+          <p class="intro">
+            Pilote sua nave, sobreviva às ondas e descubra como as
+            rochas do nosso planeta se formam.
+          </p>
+
+          <div class="menu-actions">
+
+            <button class="primary-button" id="startBtn">
+              ▶ JOGAR
+            </button>
+
+            <button class="secondary-button" id="howBtn">
+              COMO JOGAR
+            </button>
+
+            <button class="secondary-button" id="encyclopediaBtn">
+              ENCICLOPÉDIA GEOLÓGICA
+            </button>
+
+            <button class="secondary-button" id="settingsBtn">
+              CONFIGURAÇÕES
+            </button>
+
+          </div>
+
+          <div class="menu-record">
+            RECORDE LOCAL
+            <strong id="menuRecord">000000</strong>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- COMO JOGAR -->
+      <section class="overlay" id="howScreen">
+        <div class="panel-card">
+
+          <button
+            class="close-button"
+            data-close="howScreen"
+            aria-label="Fechar"
+          >×</button>
+
+          <div class="eyebrow">MANUAL DO PILOTO</div>
+
+          <h2>Como jogar</h2>
+
+          <div class="info-grid">
+
+            <div>
+              <b>⌨ CONTROLES</b>
+
+              <p>
+                <kbd>W</kbd> / <kbd>↑</kbd> acelerar<br>
+                <kbd>A</kbd> / <kbd>←</kbd> girar à esquerda<br>
+                <kbd>D</kbd> / <kbd>→</kbd> girar à direita<br>
+                <kbd>Espaço</kbd> disparar<br>
+                <kbd>1</kbd> Explosão Solar<br>
+                <kbd>2</kbd> Escudo de Plasma<br>
+                <kbd>3</kbd> Rajada Infernal<br>
+                <kbd>Esc</kbd> pausar
+              </p>
+            </div>
+
+            <div>
+              <b>🎯 OBJETIVO</b>
+
+              <p>
+                Destrua as rochas, ganhe pontos e sobreviva.
+                Rochas grandes e médias podem se dividir em
+                fragmentos menores.
+              </p>
+
+              <b>🪨 GEOLOGIA</b>
+
+              <p>
+                Ao destruir uma rocha, você verá uma explicação
+                sobre sua formação. A partida continuará durante
+                as notificações.
+              </p>
+            </div>
+
+          </div>
+
+          <button class="primary-button" data-close="howScreen">
+            ENTENDI
+          </button>
+
+        </div>
+      </section>
+
+
+      <!-- ENCICLOPÉDIA -->
+      <section class="overlay" id="encyclopediaScreen">
+        <div class="panel-card encyclopedia-card">
+
+          <button
+            class="close-button"
+            data-close="encyclopediaScreen"
+            aria-label="Fechar"
+          >×</button>
+
+          <div class="eyebrow">ARQUIVO CIENTÍFICO</div>
+
+          <h2>Enciclopédia <span>geológica</span></h2>
+
+          <div class="rock-cards">
+
+            <article class="rock-card ignea">
+              <div class="rock-symbol">◆</div>
+
+              <h3>Ígneas / magmáticas</h3>
+
+              <p>
+                <b>Formação:</b> resfriamento e solidificação
+                do magma ou da lava.
+              </p>
+
+              <p>
+                <b>Exemplos:</b> granito e basalto.
+              </p>
+
+              <small>
+                O granito geralmente se forma em profundidade;
+                o basalto, na superfície.
+              </small>
+            </article>
+
+
+            <article class="rock-card sedimentar">
+              <div class="rock-symbol">▤</div>
+
+              <h3>Sedimentares</h3>
+
+              <p>
+                <b>Formação:</b> acumulação e consolidação
+                de sedimentos. Algumas se formam por precipitação
+                de substâncias ou por materiais biológicos.
+              </p>
+
+              <p>
+                <b>Exemplos:</b> arenito e calcário.
+              </p>
+
+              <small>
+                Algumas preservam fósseis e pistas sobre
+                ambientes antigos.
+              </small>
+            </article>
+
+
+            <article class="rock-card metamorfica">
+              <div class="rock-symbol">✧</div>
+
+              <h3>Metamórficas</h3>
+
+              <p>
+                <b>Formação:</b> transformação de rochas
+                preexistentes por mudanças de temperatura
+                e pressão, sem fusão completa.
+              </p>
+
+              <p>
+                <b>Exemplos:</b> mármore e gnaisse.
+              </p>
+
+              <small>
+                O mármore pode se formar a partir do calcário;
+                o gnaisse costuma apresentar faixas minerais.
+              </small>
+            </article>
+
+          </div>
+
+          <button
+            class="primary-button"
+            data-close="encyclopediaScreen"
+          >
+            VOLTAR
+          </button>
+
+        </div>
+      </section>
+
+
+      <!-- CONFIGURAÇÕES -->
+      <section class="overlay" id="settingsScreen">
+        <div class="panel-card compact-card">
+
+          <button
+            class="close-button"
+            data-close="settingsScreen"
+            aria-label="Fechar"
+          >×</button>
+
+          <div class="eyebrow">PREFERÊNCIAS</div>
+
+          <h2>Configurações</h2>
+
+          <label class="setting-row">
+            Som dos efeitos
+            <input type="checkbox" id="soundSetting" checked>
+          </label>
+
+          <label class="setting-row">
+            Tremor de tela
+            <input type="checkbox" id="shakeSetting" checked>
+          </label>
+
+          <label class="setting-row volume-row">
+            Volume
+            <input
+              type="range"
+              id="volumeSetting"
+              min="0"
+              max="1"
+              step="0.05"
+              value="0.25"
+            >
+          </label>
+
+          <button
+            class="primary-button"
+            data-close="settingsScreen"
+          >
+            SALVAR E VOLTAR
+          </button>
+
+        </div>
+      </section>
+
+
+      <!-- PAUSA -->
+      <section class="overlay" id="pauseScreen">
+        <div class="panel-card compact-card">
+
+          <div class="eyebrow">SIMULAÇÃO SUSPENSA</div>
+
+          <h2>Jogo pausado</h2>
+
+          <p>A arena está segura por enquanto.</p>
+
+          <button class="primary-button" id="resumeBtn">
+            ▶ CONTINUAR
+          </button>
+
+          <button class="secondary-button" id="pauseMenuBtn">
+            VOLTAR AO MENU
+          </button>
+
+        </div>
+      </section>
+
+
+      <!-- FIM DE JOGO -->
+      <section class="overlay" id="gameOverScreen">
+        <div class="panel-card gameover-card">
+
+          <div class="eyebrow danger">
+            SINAL DA NAVE PERDIDO
+          </div>
+
+          <h2>GAME <span>OVER</span></h2>
+
+          <p class="final-score">
+            PONTUAÇÃO FINAL
+            <strong id="finalScore">0</strong>
+          </p>
+
+          <div class="stats-grid">
+
+            <div>
+              Rochas destruídas
+              <strong id="totalDestroyed">0</strong>
+            </div>
+
+            <div>
+              Ígneas
+              <strong id="countIgnea">0</strong>
+            </div>
+
+            <div>
+              Sedimentares
+              <strong id="countSed">0</strong>
+            </div>
+
+            <div>
+              Metamórficas
+              <strong id="countMeta">0</strong>
+            </div>
+
+            <div>
+              Onda alcançada
+              <strong id="finalWave">1</strong>
+            </div>
+
+            <div>
+              Recorde
+              <strong id="finalRecord">0</strong>
+            </div>
+
+          </div>
+
+          <button class="primary-button" id="restartBtn">
+            ↻ JOGAR NOVAMENTE
+          </button>
+
+          <button class="secondary-button" id="gameOverMenuBtn">
+            MENU INICIAL
+          </button>
+
+        </div>
+      </section>
+
+
+      <!-- INDICADOR DE PAUSA -->
+      <div class="pause-hint" id="pauseHint">
+        ⏸ PAUSADO — pressione ESC para continuar
+      </div>
+
+
+      <!-- CONTROLES PARA CELULAR -->
+      <div class="mobile-controls" id="mobileControls">
+
+        <div class="move-controls">
+          <button data-hold="left" aria-label="Girar à esquerda">◀</button>
+          <button data-hold="thrust" aria-label="Acelerar">▲</button>
+          <button data-hold="right" aria-label="Girar à direita">▶</button>
+        </div>
+
+        <div class="action-controls">
+          <button data-hold="fire" class="fire-control">
+            DISPARAR
+          </button>
+
+          <button data-power="solar" aria-label="Explosão Solar">☀</button>
+          <button data-power="shield" aria-label="Escudo de Plasma">◉</button>
+          <button data-power="inferno" aria-label="Rajada Infernal">✹</button>
+        </div>
+
+      </div>
+
+    </section>
+    <!-- FIM DA ÁREA PRINCIPAL DO JOGO -->
+
+
+    <!-- DESCRIÇÕES DAS ROCHAS: FORA DA ARENA -->
+    <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+
+    <!-- PODERES -->
+    <footer class="bottom-bar">
+
+      <div class="destroyed-count">
+        ROCHAS DESTRUÍDAS
+        <strong id="destroyedCount">0</strong>
+      </div>
+
+      <div class="power-list">
+
+        <button
+          class="power-button"
+          id="solarPower"
+          data-label="Explosão Solar"
+        >
+          <span class="power-icon">☀</span>
+
+          <span>
+            <b>EXPLOSÃO SOLAR</b>
+            <small>1 · <i id="solarCooldown">PRONTO</i></small>
+          </span>
+
+          <span class="cooldown-bar">
+            <i id="solarBar"></i>
+          </span>
+        </button>
+
+
+        <button
+          class="power-button"
+          id="shieldPower"
+          data-label="Escudo de Plasma"
+        >
+          <span class="power-icon cyan">◉</span>
+
+          <span>
+            <b>ESCUDO DE PLASMA</b>
+            <small>2· <i id="shieldCooldown">PRONTO</i></small>
+          </span>
+
+          <span class="cooldown-bar">
+            <i id="shieldBar"></i>
+          </span>
+        </button>
+
+
+        <button
+          class="power-button"
+          id="infernoPower"
+          data-label="Rajada Infernal"
+        >
+          <span class="power-icon red">✹</span>
+
+          <span>
+            <b>RAJADA INFERNAL</b>
+            <small>3 · <i id="infernoCooldown">PRONTO</i></small>
+          </span>
+
+          <span class="cooldown-bar">
+            <i id="infernoBar"></i>
+          </span>
+        </button>
+
+      </div>
+
+      <div class="footer-note">
+        ORANGE COSMOS <span>•</span> GEOLOGIA EM ÓRBITA
+      </div>
+
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

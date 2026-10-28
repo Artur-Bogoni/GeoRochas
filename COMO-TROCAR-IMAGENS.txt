@@ -1,0 +1,13 @@
+COMO TROCAR AS IMAGENS
+
+As imagens e o modelo ficam na pasta assets. Para trocar uma imagem, substitua o arquivo mantendo o mesmo nome:
+- bg.jpeg: imagem de fundo da página inicial
+- planeta-terra.glb: modelo 3D da Terra (Earth_1_12756.glb), que gira com o mouse ou o dedo
+- rocha-igneas.png: amostra de rocha ígnea, com fundo transparente
+- rocha-sedimentares.webp: amostra de rocha sedimentar, com fundo transparente
+- rocha-metamorficas.png: amostra de rocha metamórfica, com fundo transparente
+- jogo-capa.svg: ilustração do jogo exibida no topo da página Jogo
+
+O modelo 3D usa o componente model-viewer carregado pelo Google. Para abrir o site no computador, use um servidor local (por exemplo, "python -m http.server" dentro da pasta do site); o modelo e o componente precisam de internet.
+
+Os caminhos locais são relativos à pasta do site. Se trocar um arquivo por outro, mantenha o nome e o formato para não precisar alterar o HTML.
